@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bitácora — Mantenimiento del vehículo</title>
+<meta name="theme-color" content="#14161B">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bitácora">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Bit%5Cu00e1cora%20%5Cu2014%20Mantenimiento%20del%20veh%5Cu00edculo%22%2C%20%22short_name%22%3A%20%22Bit%5Cu00e1cora%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22orientation%22%3A%20%22portrait%22%2C%20%22background_color%22%3A%20%22%2314161B%22%2C%20%22theme_color%22%3A%20%22%2314161B%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAATiUlEQVR4nO3dO5Ikx7EF0GwYFvAMHIzAoUQJlCBzH285FLkc7IPYASFRIijwgWbYwTyhWZianvrkLyLcw8/RaAaAWZnZeW94ZFe/LIT07v2Hj6OPAeAMv/z755fRx8CXXJRBBDzAKwVhDCe9A2EPsI1S0J4T3IDABziXQnA%2BJ/QEAh%2BgL4XgOCdwJ6EPEIMysI%2BTtoHQB4hNGVjPiXpC6APkpAw85uTcIfgB5qAI3OakXBH6AHNTBj5xIhbBD1CNIlC8AAh%2BgNoqF4GSH1zwA3CtYhEo9YEFPwCPVCoCJT6o4AdgiwpF4KvRB9Ca8AdgqwrZMW3DqXDxAGhv1mnAdB9K8APQwmxFYKotAOEPQCuzZcwUbWa2iwJAbDNMA9JPAIQ/AL3NkD2pC8AMFwCAnLJnUMoRRvaTDsBcMm4JpJsACH8AosmYTakKQMYTDEAN2TIqxcgi20kFoLYMWwLhJwDCH4BsMmRX6AKQ4QQCwC3RMyxsAYh%2B4gDgmchZFrIARD5hALBF1EwLVwCinigA2CtitoUqABFPEACcIVrGhSkA0U4MAJwtUtaFKACRTggAtBQl84YXgCgnAgB6iZB9QwtAhBMAACOMzsBhBWD0BweA0UZm4ZACIPwB4NWoTOxeAIQ/AHxuRDZ2LQDCHwBu652R3QqA8AeAx3pmZZcCIPwBYJ1emTn8ewAAgP6aFwCrfwDYpkd2Ni0Awh8A9mmdoc0KgPAHgGNaZql3AACgoCYFwOofAM7RKlNPLwDCHwDO1SJbTy0Awh8A2jg7Y70DAAAFnVYArP4BoK0zs/aUAiD8AaCPszLXFgAAFHS4AFj9A0BfZ2SvCQAAFHSoAFj9A8AYRzN4dwEQ/gAw1pEstgUAAAXtKgBW/wAQw95MNgEAgII2FwCrfwCIZU82mwAAQEGbCoDVPwDEtDWjTQAAoKDVBcDqHwBi25LVJgAAUNCqAmD1DwA5rM1sEwAAKEgBAICCnhYA438AyGVNdpsAAEBBDwuA1T8A5PQsw00AAKAgBQAACrpbAIz/ASC3R1luAgAABSkAAFDQzQJg/A8Ac7iX6SYAAFCQAgAABX1RAIz/AWAut7LdBAAAClIAAKAgBQAACvqsANj/B4A5vc14EwAAKEgBAICCFAAAKOi3AmD/HwDmdp31JgAAUJACAAAFKQAAUJACAAAFfbUsXgAEgCoumW8CAAAFKQAAUJACAAAFKQAAUJACAAAFKQAAUJACAAAFvfgOAACoxwQAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgoK9HHwBwrv/73/9p9t/%2B9odfm/23gb5e3r3/8HH0QQDrtQz4oxQEyEMBgMAih/1aSgHEpABAEDOE/VpKAYynAMBAlUL/HmUAxlAAoCOB/5xCAH0oANCY0N9PGYB2FABoQOifTxmAcykAcCLB354iAOdQAOAgoT%2BOMgD7KQCwk%2BCPQxGA7RQA2Ejwx6UIwHoKAKwg9PNRBuAxBQAeEPz5KQJwmz8HDHcI/zm4jnCbCQC8ITDmZRoAnygA8F%2BCvw5FABQAEPyFKQJU5h0AShP%2Btbn%2BVGYCQEke/LxlGkA1JgCUI/y5xX1BNSYAlOEBz1qmAVRgAkAJwp8t3C9UYALA1DzIOco0gFmZADAt4c8Z3EfMSgFgSh7anMn9xIxsATAVD2pasyXALEwAmIbwpwf3GbNQAJiChzI9ud%2BYgQJAeh7GjOC%2BIzvvAJCWBzBReC%2BAjEwASEn4E4n7kYwUANLxsCUi9yXZKACk4iFLZO5PMlEASMPDlQzcp2ShAJCChyqZuF/JQAEgPA9TMnLfEp0CQGgeomTm/iUy3wNAWB6ex5z5u%2BmuxTG%2BJ4CIFABCEjjrjQwX12k9JYBoFADCESr3ZQgR1%2B%2B%2BDNePOhQAQhEen5shMFzTz81wTZmDAkAYguLVzAHhGr%2Ba%2BRqTx9ejDwCoEwjXn1MZgLFMAAihahhUCf5HXHsYQwFguGoB4MF/n3sB%2BlEAGKrSA9/Dfj33BbSnADBMlYe8B/x%2B7hFox1cBQyPf/vCrB/tB3/7w6/Kfv/5t9GHAlBQAhph9ZSf4z/HTT39flmWZvgTM/vNATLYA6G7mh53gP9elAFz73V/%2BPOBI%2BnD/0JMCQFezhr8H9/luhf/Fd9/9yb0EB9kCgIM8sPv76ae/O%2B9wkAkA3cy2YhNA7Txa/b814zTAvUUPJgB04QHNWlvC//LPz3Y9Zvt5ISYFADaaLWyy%2B%2B67Py3L4rrAVrYAaG6W1YyAaW/r6n9ZPhWAa%2B45eM4EgKY8iFnrrPBflnmu1yw/P8SkAMATs4TJbO6F/4XrBo8pADQzw%2BpFiPSxZ/W/xgzXb4afI2JSAGhihofWDOExq2er/2szXMcZfp6I5%2BvRBwDRzBAYmbRa/V%2B7XFNBCp%2BYAHC6zA9Z4d/XmS/%2BrZH5%2Bmb%2BuSImBQD%2BK3M4VHEk/C9cZ3ilAHCqrKsUodBfj9H/PVmvd9afL2JSAIDueo/%2BgS8pAJwm6%2Bok62qwkhbhn/G6f//jN8vv//DH0YfBJBQATiH8WWvk6P%2BtLNf/%2Bx%2B/Wb7/8Zvf/rcSwBkUAMrK8vCvrvXoP/J98Db44UwKAIdlXP1HfujPLNLq/1q0%2B2FN8JsCcJQCQDnRHvZVRH/xL8J9YcVPTwoAEFK1t/4FP70pABySbfwfYZVXUdTR/1sj7o8jq37bAByhAFCG8B8j%2Buj/rV73iXE/oykA7JZp9S/884gw%2Bm95v5wd/KYA7OWvAQLNZBn992C1TzQmAOxi9U8LEVb/F2fdNz1G/aYA7KEAMDXhP84Mq/8j9489fqKzBQCcLtuLf2cS%2BmRhAsBmWcb/Vv95RA7/LffRyPC3DcBWJgDAqWYY/W9l1U9GL%2B/ef/g4%2BiDIw%2BqfR2Ye/d%2B69yMG/7/%2B%2BY/Rh0AStgCYjvDPI0v4L8vn95UX/JiBLQDgFBVG/0KfmZgAsFqG8b/Vfx6ZVv8XGcbrXgZkLQUAOKzC6h9mowAwDav/MWZ%2B8e%2BWDFMAWEMBYJUM439yyBz%2BWdgGYA0FgClY/Y9RdfRvCsAMFABgl2qjf5iNAgB0IfwhFgWAp6Lv/xv/91d19H8t%2BjaA9wB4RgEAmrP6h3gUAFKz%2Bu/P6v%2BT6FMAeEQB4KHo43/68uJfLrYBeEQBAJoR/hCXAkBaxv99Gf3fZhuArPw1QChi7XbOrWJl9A/zUQBgUnvf33j77%2B2ZtAh/iO/l3fsPH0cfBDFFfgHQ%2BP%2B%2BVtftP3/92%2Bp/tmIBiPzCnW0KbjEBgEm0Lmy/%2B8ufl2V5XgQqhj9k5CVAmEDPac2lCAC5mQBAYqO2ae5NA6z%2BIQ8TANKx//8qwjsa19OA6uFvn51sFABuihAu3Bfp%2BtgSiC/yC4qMowBAMpHC/0IJgHwUAEgkYvhfRD424EsKACSRIWAzHCPwSgEgFS8AEpkXAclEAYAEMq2sMx0rVKYAQHAZAzXjMUM1CgAAFKQA8AWrtzgyX4vMxz4j3wXAWwoAABSkAJBGtd8AmGEFPcNn2MpvApCFAgAABSkAAFCQAgAABSkAENBMe%2BczfRaYiQIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpABDQTH/5cKbPAjNRAACgIAUAAApSAACgIAUAgpph73yGzwCzUgBIw5%2BVJYPf/%2BGPow8BVlEAILDMK%2BjMxw4VKAB8wYMb5vOvf/5j9CEQjAIAwWUsZBmPGapRACCBTIGa6VihMgUAAApSAEil8m8CZFhZZzjGlvwGAJkoAJBI5ICNfGzAlxQASCZi0EY8JuAxBQASihS4kY4FWE8B4CYP9fgiXKMIx8BzvgOAWxQA0qn8IuBb3/7w65AQHvX/G5kXAMlGAYAJ9AxjwQ9z%2BHr0AQDnuARzqwmJ4Ie5KAAwmbOLgOCHOb28e//h4%2BiDIK7I%2B%2B2CaZu119J53S7y/r8XALnHBACKEOzANS8BAkBBCgBpRd6eoI7I4394RAEAgIIUAB6ybwx5eQGQRxQAUrMNwEjG/2SmAABAQQoAT0XfBjAFYIToq3/jf55RAACgIAUAAApSAJiCbQB6ij7%2BhzUUAFaJ/h4A8In9f9ZQAJiGKQA9WP0zCwUAAApSAFgtwzaAKQAtZVj9G/%2BzlgIAAAUpAEzHFIAWMqz%2BYQsFgE0ybAMsixLAubKEv/E/WygAAFCQAsBmpgBUYvXPrBQAAChIAWBqpgAckWX1D3soAOySZRtgWZQA9skU/sb/7KEAAEBBCgC7mQIwK6t/KlAAKEMJYI1M4Q9HKAAckmkKsCxKAI9lC3%2Brf45QAACgIAWAckwBuCXb6h%2BOUgA4LNs2wLIoAXwuY/gb/3OUAkBZSgDLkjP84QwKAKfIOAVYFiWguqzhb/XPGRQATqMEkInwpzoFAAAKUgA4lSkAGVj9gwIAv1ECasga/nA2BYDTZZ0CZD1utsm6is563MSlAMAi/KsRpqAA0EimQM10rJwnUwnIdKzkoQDQTIZgzXCMtJMhWDMcIzkpAJQl/FkWAUtdCgBNRQ3ZqMfFGFFLQNTjYg4KAM1FC9tox0MM0cI22vEwHwWAUoQ/jwhdKlEA6CJC8EY4BuKLUAIiHAPzUwDoZmQAC3%2B2GBnAwp9eFACmJ/zZQxAzOwWArnqHsfDniN4lQOmgJwWA7nqFsvDnDL1CWfjTmwLAEK3DWfhzptbhLPwZQQFgOsKfFoQ0s1EAGKZFUAt/WmpRAhQLRlEAGOrMwBb%2B9HBmYAt/RlIAGO6M4Bb%2B9HRGcAt/RlMACOFIgAt/RjgS4MKfCBQAUhP%2BjCTIyUwBIIytYS78iWBrCVAaiEIBIJS1oS78iWRtqAt/IlEACOdZuAt/InoW7sKfaBQAQroX8sKfyO6FvPAnIgWAsN6GvfAng7dhL/yJSgEgtEvoC38yuYS%2B8Ceyl3fvP3wcfRAAQF8mAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQkAIAAAUpAABQ0Fe//Pvnl9EHAQD088u/f34xAQCAghQAAChIAQCAghQAAChIAQCAghQAAChIAQCAgr5altffBxx9IABAe5fMNwEAgIIUAAAoSAEAgIIUAAAo6LcC4EVAAJjbddabAABAQQoAABSkAABAQZ8VAO8BAMCc3ma8CQAAFKQAAEBBCgAAFPRFAfAeAADM5Va2mwAAQEEKAAAUdLMA2AYAgDncy3QTAAAoSAEAgILuFgDbAACQ26MsNwEAgIIUAAAo6GEBsA0AADk9y3ATAAAo6GkBMAUAgFzWZLcJAAAUpAAAQEGrCoBtAADIYW1mmwAAQEGrC4ApAADEtiWrTQAAoKBNBcAUAABi2prRJgAAUNDmAmAKAACx7MlmEwAAKGhXATAFAIAY9mayCQAAFLS7AJgCAMBYR7L40ARACQCAMY5msC0AACjocAEwBQCAvs7IXhMAACjolAJgCgAAfZyVuadNAJQAAGjrzKy1BQAABZ1aAEwBAKCNszP29AmAEgAA52qRrU22AJQAADhHq0z1DgAAFNSsAJgCAMAxLbO06QRACQCAfVpnaPMtACUAALbpkZ3eAQCAgroUAFMAAFinV2Z2mwAoAQDwWM%2Bs7LoFoAQAwG29M7L7OwBKAAB8bkQ2DnkJUAkAgFejMnHYbwEoAQBUNzILh/4aoBIAQFWjM3D49wCMPgEA0FuE7BteAJYlxokAgB6iZF6IArAscU4IALQSKevCFIBliXViAOBM0TIuVAFYlngnCACOipht4QrAssQ8UQCwR9RMC1kAliXuCQOAtSJnWdgCsCyxTxwAPBI9w0IXgGWJfwIB4K0M2RX%2BAK%2B9e//h4%2BhjAIB7MgT/RfgJwLVMJxaAWrJlVKoCsCz5TjAA88uYTekO%2BJotAQBGyhj8F%2BkmANcyn3gAcsueQakLwLLkvwAA5DND9qT/ANdsCQDQ0gzBf5F%2BAnBtpgsDQCyzZcxUH%2BaaaQAAZ5gt%2BC%2Bm/FDXFAEA9pg1%2BC%2Bm2gK4ZfYLCMD5KmTH9B/wmmkAAI9UCP6LMh/0miIAwLVKwX9R7gNfUwQAaqsY/BdlP/g1RQCglsrBf1H%2BBFxTBADmJvg/cSLuUAYA5iD0b3NSnlAEAHIS/I85ORsoAwCxCf31nKidlAGAGIT%2BPk7aCZQBgL6E/nFOYAMKAcC5BP75nNAOFAKAbQR%2Be07wIEoBwCthP4aTHpSCAMxCwMf0/w5i3a8mw/DLAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D">
+<style>html,body{margin:0;padding:0;background:#14161B;-webkit-text-size-adjust:100%}#root{min-height:100vh}</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7/babel.min.js" crossorigin></script>
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useMemo, useRef } = React;
+if (!window.storage) {
+  window.storage = {
+    async get(k){ try { const v = localStorage.getItem(k); return v == null ? null : { key:k, value:v }; } catch { return null; } },
+    async set(k,v){ try { localStorage.setItem(k, v); } catch(e){ alert("No hay espacio de almacenamiento. Borrá alguna foto/registro."); throw e; } return { key:k, value:v }; },
+    async delete(k){ try { localStorage.removeItem(k); } catch{} return { key:k, deleted:true }; },
+    async list(p){ const keys=[]; for (let i=0;i<localStorage.length;i++){ const key=localStorage.key(i); if(!p||key.startsWith(p)) keys.push(key); } return { keys }; },
+  };
+}
+
+/* ===================== estilos ===================== */
+const CSS = `
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+:root{
+  --bg:#14161B; --bg2:#1B1E26; --bg3:#232732; --line:#2E323D; --line2:#3A3F4D;
+  --txt:#ECEEF2; --mut:#9AA1AD; --mut2:#727A88;
+  --accent:#FF6A2B; --accent2:#FF844E;
+  --ok:#34D399; --soon:#FBBF24; --over:#F87171;
+  --disp:'Barlow Semi Condensed','Barlow',system-ui,sans-serif;
+  --body:'Barlow',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.gx{font-family:var(--body);color:var(--txt);background:var(--bg);min-height:100vh;
+  display:flex;justify-content:center}
+.gx-frame{width:100%;max-width:520px;background:var(--bg);min-height:100vh;
+  display:flex;flex-direction:column;position:relative;padding-bottom:78px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--mut)}
+.mut2{color:var(--mut2)}
+h1,h2,h3{font-family:var(--disp);margin:0;letter-spacing:.2px}
+
+/* topbar */
+.top{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#171A21 70%,rgba(23,26,33,0));
+  padding:14px 16px 12px}
+.topbar-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:700;
+  font-size:18px;letter-spacing:1px;text-transform:uppercase}
+.brand .dot{width:9px;height:9px;border-radius:2px;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.vehsel{display:flex;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:2px;scrollbar-width:none}
+.vehsel::-webkit-scrollbar{display:none}
+.vchip{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--mut);
+  border-radius:11px;padding:8px 12px;font-family:var(--disp);font-weight:600;font-size:13px;
+  display:flex;flex-direction:column;gap:1px;min-width:96px;cursor:pointer;transition:.15s}
+.vchip .vk{font-family:var(--mono);font-size:10px;color:var(--mut2);font-weight:500}
+.vchip.on{border-color:var(--accent);color:var(--txt);background:#23201E}
+.vchip.add{align-items:center;justify-content:center;min-width:44px;color:var(--mut2);font-size:20px}
+
+/* odometer */
+.odo{margin:12px 16px 4px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;
+  padding:16px;display:flex;align-items:center;justify-content:space-between}
+.odo .lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--mut2)}
+.odo .big{font-family:var(--mono);font-weight:700;font-size:30px;line-height:1.05;margin-top:4px}
+.odo .big small{font-size:14px;color:var(--mut);font-weight:500;margin-left:4px}
+.odo .sub{font-size:12px;color:var(--mut);margin-top:5px}
+.odo .sub b{color:var(--accent2);font-family:var(--mono);font-weight:600}
+
+/* buttons */
+.btn{font-family:var(--disp);font-weight:600;font-size:14px;border-radius:11px;padding:11px 14px;
+  border:1px solid var(--line2);background:var(--bg3);color:var(--txt);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.15s}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.acc{background:var(--accent);border-color:var(--accent);color:#1a0f08;font-weight:700}
+.btn.ghost{background:transparent;border-color:var(--line)}
+.btn.sm{padding:7px 11px;font-size:12.5px;border-radius:9px}
+.btn.block{width:100%}
+.btn.danger{background:transparent;border-color:#5b2b2b;color:var(--over)}
+.iconbtn{background:var(--bg3);border:1px solid var(--line);color:var(--mut);border-radius:9px;
+  width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px}
+
+/* section */
+.sec{padding:6px 16px 4px}
+.sec-h{display:flex;align-items:center;justify-content:space-between;margin:18px 0 10px}
+.sec-h h2{font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:var(--mut)}
+.eyebrow{font-family:var(--mono);font-size:10px;color:var(--accent2);letter-spacing:1px}
+
+/* cards */
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px}
+.alert{display:flex;gap:11px;align-items:flex-start;border-left:3px solid;border-radius:10px;
+  padding:11px 12px;margin-bottom:8px;background:var(--bg2)}
+.alert.over{border-color:var(--over);background:rgba(248,113,113,.07)}
+.alert.soon{border-color:var(--soon);background:rgba(251,191,36,.06)}
+.alert .ttl{font-family:var(--disp);font-weight:600;font-size:14px}
+.alert .ds{font-size:12px;color:var(--mut);margin-top:2px}
+
+/* maintenance item row */
+.mrow{display:flex;gap:12px;align-items:center}
+.gauge{position:relative;width:64px;height:64px;flex:0 0 64px}
+.gauge svg{transform:rotate(0);display:block}
+.gauge-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gauge-v{font-family:var(--mono);font-weight:700;font-size:14px}
+.minfo{flex:1;min-width:0}
+.minfo .mn{font-family:var(--disp);font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px}
+.dual{display:flex;gap:14px;margin-top:5px;flex-wrap:wrap}
+.dual .d{font-size:12px;color:var(--mut)}
+.dual .d .num{font-size:12.5px;color:var(--txt)}
+.dual .d.bind .num{color:var(--accent2)}
+.pred{font-family:var(--mono);font-size:11px;color:var(--mut2);margin-top:6px}
+.pred b{color:var(--soon);font-weight:600}
+
+/* pills */
+.pill{font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.6px;text-transform:uppercase;
+  padding:3px 8px;border-radius:7px;white-space:nowrap}
+.pill.ok{background:rgba(52,211,153,.13);color:var(--ok)}
+.pill.soon{background:rgba(251,191,36,.14);color:var(--soon)}
+.pill.over{background:rgba(248,113,113,.14);color:var(--over)}
+.pill.cat{background:var(--bg3);color:var(--mut);font-weight:600;letter-spacing:.3px;text-transform:none;font-size:11px}
+
+/* timeline / history */
+.tl{position:relative;padding-left:20px}
+.tl::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tlitem{position:relative;margin-bottom:12px}
+.tlitem::before{content:'';position:absolute;left:-18px;top:16px;width:10px;height:10px;border-radius:50%;
+  background:var(--accent);border:2px solid var(--bg)}
+.tlitem.corr::before{background:var(--over)}
+.svc-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.svc-t{font-family:var(--disp);font-weight:600;font-size:15px}
+.svc-meta{font-family:var(--mono);font-size:11px;color:var(--mut2);margin-top:2px;display:flex;gap:10px;flex-wrap:wrap}
+.cost{font-family:var(--mono);font-weight:700;font-size:15px;color:var(--txt)}
+.part{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:6px 0;border-top:1px solid var(--line)}
+.part .pl{min-width:0}
+.part .pn{font-weight:600;font-family:var(--disp)}
+.part .pd{font-size:11px;color:var(--mut2);font-family:var(--mono);margin-top:1px}
+.part .pc{font-family:var(--mono);color:var(--mut);white-space:nowrap}
+.chk{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chk .c{font-size:11px;font-family:var(--mono);padding:3px 7px;border-radius:6px;background:var(--bg3);color:var(--mut2)}
+.chk .c.on{background:rgba(52,211,153,.12);color:var(--ok)}
+.att{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.thumb{width:48px;height:48px;border-radius:8px;border:1px solid var(--line2);object-fit:cover;cursor:pointer;background:var(--bg3)}
+.filepill{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--line2);
+  border-radius:8px;padding:6px 9px;font-size:11px;font-family:var(--mono);color:var(--mut);cursor:pointer}
+
+/* stats */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:4px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:13px}
+.stat .sl{font-size:10.5px;text-transform:uppercase;letter-spacing:1.1px;color:var(--mut2)}
+.stat .sv{font-family:var(--mono);font-weight:700;font-size:21px;margin-top:5px}
+.stat .sv small{font-size:12px;color:var(--mut);font-weight:500}
+.catbar{margin:5px 0}
+.catbar .cl{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+.catbar .cl .num{font-family:var(--mono);color:var(--mut)}
+.catbar .tr{height:7px;border-radius:4px;background:var(--bg3);overflow:hidden}
+.catbar .fl{height:100%;border-radius:4px}
+
+/* inputs */
+.field{margin-bottom:12px}
+.field>label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut2);margin-bottom:5px}
+.inp,.sel,.ta{width:100%;background:var(--bg3);border:1px solid var(--line2);border-radius:10px;
+  padding:11px 12px;color:var(--txt);font-family:var(--body);font-size:15px}
+.inp.num,.sel.num{font-family:var(--mono)}
+.ta{resize:vertical;min-height:62px;font-family:var(--body)}
+.inp:focus,.sel:focus,.ta:focus{outline:none;border-color:var(--accent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg{display:flex;background:var(--bg3);border:1px solid var(--line2);border-radius:10px;padding:3px;gap:3px}
+.seg button{flex:1;border:none;background:transparent;color:var(--mut);font-family:var(--disp);font-weight:600;
+  font-size:13px;padding:8px;border-radius:8px;cursor:pointer}
+.seg button.on{background:var(--accent);color:#1a0f08}
+.seg button.on.alt{background:var(--bg)}
+.toglist{display:flex;flex-direction:column;gap:7px}
+.tog{display:flex;align-items:center;gap:10px;background:var(--bg3);border:1px solid var(--line);
+  border-radius:10px;padding:10px 11px;cursor:pointer;font-size:14px;font-family:var(--disp);font-weight:500}
+.tog .box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line2);flex:0 0 20px;
+  display:flex;align-items:center;justify-content:center;font-size:12px;color:#1a0f08}
+.tog.on .box{background:var(--accent);border-color:var(--accent)}
+.tog.on{border-color:var(--accent)}
+
+/* sheet / modal */
+.scrim{position:fixed;inset:0;background:rgba(8,9,12,.66);z-index:50;display:flex;align-items:flex-end;
+  justify-content:center;backdrop-filter:blur(2px)}
+.sheet{width:100%;max-width:520px;max-height:92vh;background:var(--bg2);border:1px solid var(--line);
+  border-bottom:none;border-radius:20px 20px 0 0;display:flex;flex-direction:column;animation:up .22s ease}
+@keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
+.sheet-h{display:flex;align-items:center;justify-content:space-between;padding:16px 16px 10px;
+  border-bottom:1px solid var(--line);position:sticky;top:0}
+.sheet-h h3{font-size:17px}
+.sheet-b{padding:16px;overflow-y:auto}
+.sheet-f{padding:12px 16px 18px;border-top:1px solid var(--line);display:flex;gap:9px}
+.x{background:var(--bg3);border:1px solid var(--line);color:var(--mut);width:32px;height:32px;border-radius:9px;
+  font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* tabbar */
+.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:30;display:flex;justify-content:center;
+  background:linear-gradient(0deg,#14161B 78%,rgba(20,22,27,0));padding:8px 0 12px;pointer-events:none}
+.tabbar-in{width:100%;max-width:520px;display:flex;background:var(--bg2);border:1px solid var(--line);
+  border-radius:16px;margin:0 12px;padding:5px;pointer-events:auto}
+.tab{flex:1;background:transparent;border:none;color:var(--mut2);font-family:var(--disp);font-weight:600;
+  font-size:11px;padding:8px 4px;border-radius:11px;cursor:pointer;display:flex;flex-direction:column;
+  align-items:center;gap:3px;letter-spacing:.3px}
+.tab .ic{font-size:18px}
+.tab.on{color:var(--accent);background:#23201E}
+
+/* misc */
+.empty{text-align:center;padding:34px 18px;color:var(--mut2)}
+.empty .e-ic{font-size:30px;margin-bottom:8px;opacity:.7}
+.empty .e-t{font-family:var(--disp);font-weight:600;color:var(--mut);font-size:15px;margin-bottom:4px}
+.empty .e-s{font-size:13px}
+.hr{height:1px;background:var(--line);margin:14px 0;border:none}
+.lb{position:fixed;inset:0;background:rgba(5,6,9,.92);z-index:60;display:flex;align-items:center;
+  justify-content:center;padding:20px;cursor:zoom-out}
+.lb img{max-width:100%;max-height:90vh;border-radius:10px}
+.note{font-size:11.5px;color:var(--mut2);font-family:var(--mono);line-height:1.5;background:var(--bg3);
+  border:1px solid var(--line);border-radius:10px;padding:10px 11px;margin-top:4px}
+.loading{display:flex;align-items:center;justify-content:center;height:60vh;color:var(--mut2);
+  font-family:var(--mono);font-size:13px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.mbars{display:flex;align-items:flex-end;justify-content:space-around;gap:6px;padding:8px 2px 2px}
+.mbar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end}
+.mbar-v{font-family:var(--mono);font-size:10px;color:var(--mut2)}
+.mbar-track{width:100%;max-width:38px;display:flex;align-items:flex-end;height:120px}
+.mbar-fill{width:100%;background:linear-gradient(180deg,var(--accent2),var(--accent));border-radius:5px 5px 0 0;min-height:4px;transition:height .3s}
+.mbar-l{font-family:var(--mono);font-size:10px;color:var(--mut)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+`;
+
+/* ===================== datos base ===================== */
+const CATS = [
+  { id: "preventivo", label: "Preventivo", color: "#34D399" },
+  { id: "correctivo", label: "Correctivo", color: "#F87171" },
+  { id: "combustible", label: "Combustible", color: "#FBBF24" },
+  { id: "seguro", label: "Seguro", color: "#60A5FA" },
+  { id: "patente", label: "Patente / impuestos", color: "#A78BFA" },
+  { id: "otros", label: "Otros", color: "#9AA1AD" },
+];
+const catOf = (id) => CATS.find((c) => c.id === id) || CATS[5];
+
+const CHECKLIST = [
+  "Nivel y estado de aceite",
+  "Líquido de frenos",
+  "Líquido refrigerante",
+  "Dirección hidráulica",
+  "Líquido lavaparabrisas",
+  "Presión de neumáticos",
+  "Desgaste de neumáticos",
+  "Estado de correas",
+  "Luces (altas/bajas/giros/freno)",
+  "Escobillas limpiaparabrisas",
+  "Pastillas / discos de freno",
+  "Batería (bornes y carga)",
+];
+
+/* ===================== utils ===================== */
+const uid = () => Math.random().toString(36).slice(2, 10);
+const todayISO = () => new Date().toISOString().slice(0, 10);
+const parse = (iso) => { const [y, m, d] = iso.split("-").map(Number); return new Date(y, m - 1, d); };
+const addMonths = (iso, n) => { const d = parse(iso); d.setMonth(d.getMonth() + n); return d.toISOString().slice(0, 10); };
+const addDays = (iso, n) => { const d = parse(iso); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
+const monthsAgo = (n) => addMonths(todayISO(), -n);
+const daysBetween = (a, b) => Math.round((parse(b) - parse(a)) / 86400000);
+const fmtKm = (n) => Math.round(n).toLocaleString("es-AR") + " km";
+const fmtKmShort = (n) => { const a = Math.abs(n); return a >= 1000 ? (Math.sign(n) < 0 ? "-" : "") + (a / 1000).toFixed(a >= 10000 ? 0 : 1).replace(".", ",") + "k" : Math.round(n).toString(); };
+const money = (n) => "$ " + Math.round(n).toLocaleString("es-AR");
+const fmtDate = (iso) => { const [y, m, d] = iso.split("-"); return `${d}/${m}/${y}`; };
+const MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+const monthLabel = (iso) => MES[Number(iso.split("-")[1]) - 1] + " " + iso.split("-")[0].slice(2);
+const relMonth = (iso) => { const m = Number(iso.split("-")[1]) - 1, y = iso.split("-")[0]; return ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"][m] + " " + y; };
+const clamp = (v, a, b) => Math.max(a, Math.min(v, b));
+
+/* ===================== storage ===================== */
+const KEY = "vmt_state_v2";
+const photoCache = new Map();
+async function loadState() { try { const r = await window.storage.get(KEY); return r ? JSON.parse(r.value) : null; } catch { return null; } }
+async function saveState(s) { try { await window.storage.set(KEY, JSON.stringify(s)); } catch (e) { console.error("save", e); } }
+async function savePhoto(id, dataUrl) { try { photoCache.set(id, dataUrl); await window.storage.set("vmt_ph_" + id, dataUrl); } catch (e) { console.error(e); } }
+async function getPhoto(id) { if (photoCache.has(id)) return photoCache.get(id); try { const r = await window.storage.get("vmt_ph_" + id); if (r) { photoCache.set(id, r.value); return r.value; } } catch {} return null; }
+async function delPhoto(id) { try { photoCache.delete(id); await window.storage.delete("vmt_ph_" + id); } catch {} }
+
+/* ===================== mantenimiento por defecto ===================== */
+const tmpl = (name, km, months) => ({ id: uid(), name, intervalKm: km, intervalMonths: months, lastServiceKm: 0, lastServiceDate: todayISO() });
+
+function buildSeed() {
+  const t = todayISO();
+  // ---- Peugeot 208 ----
+  const p208 = {
+    id: uid(), name: "Peugeot 208", make: "Peugeot", model: "208 1.5 Allure", year: 2015,
+    plate: "", currentKm: 92000, dailyAvgKm: 40,
+    kmHistory: [{ km: 90400, date: monthsAgo(2) }, { km: 92000, date: t }],
+    maintenanceItems: [
+      { ...tmpl("Aceite y filtro de aceite", 10000, 12), lastServiceKm: 83000, lastServiceDate: monthsAgo(5) },
+      { ...tmpl("Filtro de aire", 20000, 24), lastServiceKm: 80000, lastServiceDate: monthsAgo(10) },
+      { ...tmpl("Filtro de habitáculo", 15000, 12), lastServiceKm: 80000, lastServiceDate: monthsAgo(10) },
+      { ...tmpl("Filtro de combustible", 40000, 48), lastServiceKm: 60000, lastServiceDate: monthsAgo(30) },
+      { ...tmpl("Bujías", 30000, 36), lastServiceKm: 80000, lastServiceDate: monthsAgo(10) },
+      { ...tmpl("Líquido de frenos", 0, 24), lastServiceKm: 0, lastServiceDate: monthsAgo(26) },
+      { ...tmpl("Refrigerante", 60000, 48), lastServiceKm: 60000, lastServiceDate: monthsAgo(30) },
+      { ...tmpl("Correa de distribución", 100000, 120), lastServiceKm: 30000, lastServiceDate: monthsAgo(60) },
+    ],
+  };
+  const g = {
+    id: uid(), name: "VW Gol", make: "Volkswagen", model: "Gol 1.6", year: 2004,
+    plate: "", currentKm: 180000, dailyAvgKm: 25,
+    kmHistory: [{ km: 179200, date: monthsAgo(2) }, { km: 180000, date: t }],
+    maintenanceItems: [
+      { ...tmpl("Aceite y filtro de aceite", 10000, 12), lastServiceKm: 174000, lastServiceDate: monthsAgo(6) },
+      { ...tmpl("Filtro de aire", 20000, 24), lastServiceKm: 170000, lastServiceDate: monthsAgo(8) },
+      { ...tmpl("Filtro de combustible", 30000, 36), lastServiceKm: 165000, lastServiceDate: monthsAgo(14) },
+      { ...tmpl("Bujías", 30000, 36), lastServiceKm: 165000, lastServiceDate: monthsAgo(14) },
+      { ...tmpl("Líquido de frenos", 0, 24), lastServiceKm: 0, lastServiceDate: monthsAgo(13) },
+      { ...tmpl("Correa de distribución", 60000, 60), lastServiceKm: 125000, lastServiceDate: monthsAgo(40) },
+    ],
+  };
+  const services = [
+    {
+      id: uid(), vehicleId: p208.id, date: monthsAgo(5), km: 83000, type: "preventivo",
+      title: "Service de aceite y filtros", notes: "",
+      parts: [
+        { id: uid(), name: "Aceite 5W30 sintético", brand: "Total Quartz 9000", code: "5W30", place: "Lubricentro El Cruce", cost: 38000 },
+        { id: uid(), name: "Filtro de aceite", brand: "Mann", code: "W 712/95", place: "Repuestera Tartagal", cost: 9000 },
+        { id: uid(), name: "Filtro de aire", brand: "Mann", code: "C 25 114", place: "Repuestera Tartagal", cost: 11000 },
+      ],
+      labor: 14000, totalCost: 72000,
+      checklist: { "Nivel y estado de aceite": true, "Presión de neumáticos": true, "Estado de correas": true, "Líquido refrigerante": true },
+      attachments: [],
+    },
+  ];
+  const expenses = [
+    { id: uid(), vehicleId: p208.id, date: monthsAgo(0), category: "combustible", amount: 45000, label: "Carga nafta" },
+    { id: uid(), vehicleId: p208.id, date: monthsAgo(1), category: "combustible", amount: 42000, label: "Carga nafta" },
+    { id: uid(), vehicleId: p208.id, date: monthsAgo(2), category: "combustible", amount: 40000, label: "Carga nafta" },
+    { id: uid(), vehicleId: p208.id, date: monthsAgo(1), category: "seguro", amount: 28000, label: "Cuota seguro" },
+    { id: uid(), vehicleId: p208.id, date: monthsAgo(3), category: "patente", amount: 35000, label: "Patente cuota" },
+    { id: uid(), vehicleId: g.id, date: monthsAgo(0), category: "combustible", amount: 30000, label: "Carga nafta" },
+  ];
+  return { vehicles: [p208, g], services, expenses, activeId: p208.id };
+}
+
+/* ===================== lógica de estado de mantenimiento ===================== */
+function itemStatus(vehicle, item) {
+  const cur = vehicle.currentKm;
+  const t = todayISO();
+  let kmRemaining = null, kmProg = null, nextKm = null;
+  if (item.intervalKm > 0) {
+    nextKm = (item.lastServiceKm || 0) + item.intervalKm;
+    kmRemaining = nextKm - cur;
+    kmProg = (cur - (item.lastServiceKm || 0)) / item.intervalKm;
+  }
+  let daysRemaining = null, timeProg = null, nextDate = null;
+  if (item.intervalMonths > 0 && item.lastServiceDate) {
+    nextDate = addMonths(item.lastServiceDate, item.intervalMonths);
+    daysRemaining = daysBetween(t, nextDate);
+    const tot = daysBetween(item.lastServiceDate, nextDate);
+    timeProg = tot > 0 ? daysBetween(item.lastServiceDate, t) / tot : 0;
+  }
+  const avg = vehicle.dailyAvgKm > 0 ? vehicle.dailyAvgKm : null;
+  const kmDays = kmRemaining != null && avg ? Math.round(kmRemaining / avg) : null;
+  const progress = Math.max(kmProg ?? 0, timeProg ?? 0);
+
+  const kmOver = kmRemaining != null && kmRemaining <= 0;
+  const timeOver = daysRemaining != null && daysRemaining <= 0;
+  const kmSoon = kmRemaining != null && kmRemaining <= Math.max(1000, (item.intervalKm || 0) * 0.1);
+  const timeSoon = daysRemaining != null && daysRemaining <= 30;
+  let status = "ok";
+  if (kmOver || timeOver) status = "overdue";
+  else if (kmSoon || timeSoon) status = "soon";
+
+  // ¿qué limita primero? km o tiempo
+  let bind = null; // 'km' | 'time'
+  const dKm = kmDays, dTime = daysRemaining;
+  if (dKm != null && dTime != null) bind = dKm <= dTime ? "km" : "time";
+  else if (dKm != null) bind = "km";
+  else if (dTime != null) bind = "time";
+
+  const bindingDays = bind === "km" ? dKm : bind === "time" ? dTime : null;
+  let pred = null;
+  if (status !== "overdue" && bindingDays != null) {
+    const target = addDays(t, Math.max(bindingDays, 0));
+    const reason = bind === "km" ? "por km" : "por tiempo";
+    if (bindingDays <= 45) {
+      const rel = bindingDays <= 21 ? `en ~${Math.max(bindingDays, 0)} días` : `en ~${Math.round(bindingDays / 30)} mes(es)`;
+      pred = { soon: true, text: `Estimado ${rel} (${reason})` };
+    } else {
+      pred = { soon: false, text: `Estimado: ${relMonth(target)} (${reason})` };
+    }
+  }
+  return { status, kmRemaining, daysRemaining, kmDays, progress, bind, nextKm, nextDate, pred };
+}
+
+function vehicleAlerts(v) {
+  return v.maintenanceItems
+    .map((it) => ({ it, s: itemStatus(v, it) }))
+    .filter((x) => x.s.status !== "ok")
+    .sort((a, b) => (a.s.status === "overdue" ? -1 : 1) - (b.s.status === "overdue" ? -1 : 1));
+}
+
+/* ===================== componentes UI ===================== */
+function Gauge({ progress, status }) {
+  const r = 26, sw = 6, C = 2 * Math.PI * r;
+  const p = clamp(progress, 0, 1);
+  const off = C * (1 - p);
+  const col = status === "overdue" ? "var(--over)" : status === "soon" ? "var(--soon)" : "var(--ok)";
+  return (
+    <div className="gauge">
+      <svg width="64" height="64" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r={r} fill="none" stroke="var(--line)" strokeWidth={sw} />
+        <circle cx="32" cy="32" r={r} fill="none" stroke={col} strokeWidth={sw} strokeLinecap="round"
+          strokeDasharray={C} strokeDashoffset={off} transform="rotate(-90 32 32)" />
+      </svg>
+      <div className="gauge-c">
+        <div className="gauge-v" style={{ color: col }}>{status === "overdue" ? "!" : Math.round(p * 100) + "%"}</div>
+      </div>
+    </div>
+  );
+}
+
+function Pill({ status }) {
+  const m = { ok: ["ok", "Al día"], soon: ["soon", "Próximo"], overdue: ["over", "Vencido"] }[status];
+  return <span className={"pill " + m[0]}>{m[1]}</span>;
+}
+
+function StoredAttachment({ att, onOpen }) {
+  const [url, setUrl] = useState(null);
+  useEffect(() => { let on = true; getPhoto(att.id).then((u) => on && setUrl(u)); return () => { on = false; }; }, [att.id]);
+  if (att.kind === "pdf") {
+    return (
+      <span className="filepill" onClick={() => url && onOpen({ kind: "pdf", url, name: att.name })}>
+        📄 {att.name?.slice(0, 18) || "PDF"}
+      </span>
+    );
+  }
+  if (!url) return <div className="thumb" />;
+  return <img className="thumb" src={url} alt="" onClick={() => onOpen({ kind: "image", url })} />;
+}
+
+function Field({ label, children }) {
+  return <div className="field"><label>{label}</label>{children}</div>;
+}
+
+function Sheet({ title, onClose, children, footer }) {
+  return (
+    <div className="scrim" onClick={onClose}>
+      <div className="sheet" onClick={(e) => e.stopPropagation()}>
+        <div className="sheet-h"><h3>{title}</h3><button className="x" onClick={onClose}>✕</button></div>
+        <div className="sheet-b">{children}</div>
+        {footer && <div className="sheet-f">{footer}</div>}
+      </div>
+    </div>
+  );
+}
+
+function Empty({ icon, title, sub }) {
+  return <div className="empty"><div className="e-ic">{icon}</div><div className="e-t">{title}</div><div className="e-s">{sub}</div></div>;
+}
+
+/* ===================== adjuntar archivos ===================== */
+function compressImage(file, maxDim = 1100, q = 0.62) {
+  return new Promise((resolve, reject) => {
+    const fr = new FileReader();
+    fr.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        if (width > height && width > maxDim) { height = (height * maxDim) / width; width = maxDim; }
+        else if (height >= width && height > maxDim) { width = (width * maxDim) / height; height = maxDim; }
+        const cv = document.createElement("canvas");
+        cv.width = width; cv.height = height;
+        cv.getContext("2d").drawImage(img, 0, 0, width, height);
+        resolve(cv.toDataURL("image/jpeg", q));
+      };
+      img.onerror = reject;
+      img.src = e.target.result;
+    };
+    fr.onerror = reject;
+    fr.readAsDataURL(file);
+  });
+}
+function readPdf(file) {
+  return new Promise((resolve, reject) => { const fr = new FileReader(); fr.onload = (e) => resolve(e.target.result); fr.onerror = reject; fr.readAsDataURL(file); });
+}
+
+/* ===================== formularios ===================== */
+function VehicleForm({ vehicle, onSave, onClose, onDelete }) {
+  const [f, setF] = useState(vehicle || { name: "", make: "", model: "", year: "", plate: "", currentKm: 0, dailyAvgKm: 35 });
+  const up = (k, v) => setF((s) => ({ ...s, [k]: v }));
+  const save = () => {
+    if (!f.name.trim()) return;
+    onSave({
+      ...(vehicle || { id: uid(), kmHistory: [{ km: Number(f.currentKm) || 0, date: todayISO() }], maintenanceItems: DEFAULT_ITEMS() }),
+      ...f, year: Number(f.year) || "", currentKm: Number(f.currentKm) || 0, dailyAvgKm: Number(f.dailyAvgKm) || 35,
+    });
+  };
+  return (
+    <Sheet title={vehicle ? "Editar vehículo" : "Nuevo vehículo"} onClose={onClose}
+      footer={<>
+        {vehicle && <button className="btn danger sm" onClick={() => onDelete(vehicle.id)}>Eliminar</button>}
+        <button className="btn acc block" onClick={save}>{vehicle ? "Guardar" : "Crear vehículo"}</button>
+      </>}>
+      <Field label="Nombre / apodo"><input className="inp" value={f.name} placeholder="Mi auto" onChange={(e) => up("name", e.target.value)} /></Field>
+      <div className="two">
+        <Field label="Marca"><input className="inp" value={f.make} onChange={(e) => up("make", e.target.value)} /></Field>
+        <Field label="Modelo"><input className="inp" value={f.model} onChange={(e) => up("model", e.target.value)} /></Field>
+      </div>
+      <div className="two">
+        <Field label="Año"><input className="inp num" inputMode="numeric" value={f.year} onChange={(e) => up("year", e.target.value)} /></Field>
+        <Field label="Patente"><input className="inp num" value={f.plate} onChange={(e) => up("plate", e.target.value)} /></Field>
+      </div>
+      <div className="two">
+        <Field label="Km actuales"><input className="inp num" inputMode="numeric" value={f.currentKm} onChange={(e) => up("currentKm", e.target.value)} /></Field>
+        <Field label="Promedio km/día"><input className="inp num" inputMode="numeric" value={f.dailyAvgKm} onChange={(e) => up("dailyAvgKm", e.target.value)} /></Field>
+      </div>
+      {!vehicle && <div className="note">Se cargará un plan de mantenimiento típico (aceite, filtros, frenos, etc.). Después lo editás a gusto.</div>}
+    </Sheet>
+  );
+}
+const DEFAULT_ITEMS = () => [
+  tmpl("Aceite y filtro de aceite", 10000, 12), tmpl("Filtro de aire", 20000, 24),
+  tmpl("Filtro de combustible", 40000, 48), tmpl("Bujías", 30000, 36),
+  tmpl("Líquido de frenos", 0, 24), tmpl("Refrigerante", 60000, 48),
+];
+
+function KmForm({ vehicle, onSave, onClose }) {
+  const [km, setKm] = useState(vehicle.currentKm);
+  const [date, setDate] = useState(todayISO());
+  const save = () => {
+    const v = Number(km) || vehicle.currentKm;
+    const hist = [...(vehicle.kmHistory || []), { km: v, date }].slice(-12);
+    let avg = vehicle.dailyAvgKm;
+    if (hist.length >= 2) {
+      const first = hist[0], last = hist[hist.length - 1];
+      const d = daysBetween(first.date, last.date);
+      if (d > 0 && last.km > first.km) avg = Math.max(1, Math.round((last.km - first.km) / d));
+    }
+    onSave({ ...vehicle, currentKm: Math.max(v, vehicle.currentKm), kmHistory: hist, dailyAvgKm: avg });
+  };
+  return (
+    <Sheet title="Actualizar kilometraje" onClose={onClose}
+      footer={<button className="btn acc block" onClick={save}>Guardar lectura</button>}>
+      <Field label="Km actuales"><input className="inp num" inputMode="numeric" value={km} onChange={(e) => setKm(e.target.value)} /></Field>
+      <Field label="Fecha de la lectura"><input className="inp" type="date" value={date} onChange={(e) => setDate(e.target.value)} /></Field>
+      <div className="note">El promedio km/día se recalcula solo con tus lecturas y se usa para estimar cuándo te va a tocar el próximo service.</div>
+    </Sheet>
+  );
+}
+
+function ItemForm({ item, onSave, onClose, onDelete }) {
+  const [f, setF] = useState(item || { name: "", intervalKm: 10000, intervalMonths: 12, lastServiceKm: 0, lastServiceDate: todayISO() });
+  const up = (k, v) => setF((s) => ({ ...s, [k]: v }));
+  const save = () => { if (!f.name.trim()) return; onSave({ ...(item || { id: uid() }), ...f, intervalKm: Number(f.intervalKm) || 0, intervalMonths: Number(f.intervalMonths) || 0, lastServiceKm: Number(f.lastServiceKm) || 0 }); };
+  return (
+    <Sheet title={item ? "Editar mantenimiento" : "Nuevo mantenimiento"} onClose={onClose}
+      footer={<>
+        {item && <button className="btn danger sm" onClick={() => onDelete(item.id)}>Eliminar</button>}
+        <button className="btn acc block" onClick={save}>Guardar</button>
+      </>}>
+      <Field label="Componente / tarea"><input className="inp" value={f.name} placeholder="Ej: Aceite y filtro" onChange={(e) => up("name", e.target.value)} /></Field>
+      <div className="two">
+        <Field label="Cada (km) · 0 = no aplica"><input className="inp num" inputMode="numeric" value={f.intervalKm} onChange={(e) => up("intervalKm", e.target.value)} /></Field>
+        <Field label="Cada (meses) · 0 = no aplica"><input className="inp num" inputMode="numeric" value={f.intervalMonths} onChange={(e) => up("intervalMonths", e.target.value)} /></Field>
+      </div>
+      <div className="two">
+        <Field label="Último cambio (km)"><input className="inp num" inputMode="numeric" value={f.lastServiceKm} onChange={(e) => up("lastServiceKm", e.target.value)} /></Field>
+        <Field label="Último cambio (fecha)"><input className="inp" type="date" value={f.lastServiceDate} onChange={(e) => up("lastServiceDate", e.target.value)} /></Field>
+      </div>
+      <div className="note">La app avisa por lo que ocurra primero: kilómetros o tiempo.</div>
+    </Sheet>
+  );
+}
+
+function ServiceForm({ vehicle, onSave, onClose }) {
+  const [date, setDate] = useState(todayISO());
+  const [km, setKm] = useState(vehicle.currentKm);
+  const [type, setType] = useState("preventivo");
+  const [title, setTitle] = useState("");
+  const [notes, setNotes] = useState("");
+  const [labor, setLabor] = useState("");
+  const [parts, setParts] = useState([{ id: uid(), name: "", brand: "", code: "", place: "", cost: "" }]);
+  const [resets, setResets] = useState({});
+  const [checklist, setChecklist] = useState({});
+  const [atts, setAtts] = useState([]); // {id,kind,name,file,previewUrl}
+  const fileRef = useRef();
+
+  const upPart = (id, k, v) => setParts((p) => p.map((x) => (x.id === id ? { ...x, [k]: v } : x)));
+  const addPart = () => setParts((p) => [...p, { id: uid(), name: "", brand: "", code: "", place: "", cost: "" }]);
+  const rmPart = (id) => setParts((p) => p.filter((x) => x.id !== id));
+
+  const onFiles = async (e) => {
+    const files = Array.from(e.target.files || []);
+    for (const file of files) {
+      if (file.size > 4 * 1024 * 1024 && file.type === "application/pdf") { alert("El PDF supera 4 MB. Probá con uno más liviano o sacale una foto."); continue; }
+      const kind = file.type === "application/pdf" ? "pdf" : "image";
+      setAtts((a) => [...a, { id: uid(), kind, name: file.name, file, previewUrl: kind === "image" ? URL.createObjectURL(file) : null }]);
+    }
+    e.target.value = "";
+  };
+  const rmAtt = (id) => setAtts((a) => { const x = a.find((z) => z.id === id); if (x?.previewUrl) URL.revokeObjectURL(x.previewUrl); return a.filter((z) => z.id !== id); });
+
+  const save = async () => {
+    const cleanParts = parts.filter((p) => p.name.trim()).map((p) => ({ ...p, cost: Number(p.cost) || 0 }));
+    const total = cleanParts.reduce((s, p) => s + p.cost, 0) + (Number(labor) || 0);
+    // procesar adjuntos
+    const saved = [];
+    for (const a of atts) {
+      const data = a.kind === "image" ? await compressImage(a.file) : await readPdf(a.file);
+      await savePhoto(a.id, data);
+      if (a.previewUrl) URL.revokeObjectURL(a.previewUrl);
+      saved.push({ id: a.id, kind: a.kind, name: a.name });
+    }
+    const svc = {
+      id: uid(), vehicleId: vehicle.id, date, km: Number(km) || vehicle.currentKm, type,
+      title: title.trim() || (type === "correctivo" ? "Reparación" : "Service"), notes: notes.trim(),
+      parts: cleanParts, labor: Number(labor) || 0, totalCost: total,
+      checklist, attachments: saved,
+    };
+    onSave(svc, Object.keys(resets).filter((k) => resets[k]));
+  };
+
+  return (
+    <Sheet title="Registrar service" onClose={onClose}
+      footer={<button className="btn acc block" onClick={save}>Guardar en el historial</button>}>
+      <div className="field">
+        <label>Tipo</label>
+        <div className="seg">
+          <button className={type === "preventivo" ? "on" : ""} onClick={() => setType("preventivo")}>Preventivo</button>
+          <button className={type === "correctivo" ? "on alt" : ""} onClick={() => setType("correctivo")} style={type === "correctivo" ? { background: "var(--over)", color: "#1a0808" } : {}}>Correctivo</button>
+        </div>
+      </div>
+      <Field label="Título"><input className="inp" value={title} placeholder={type === "correctivo" ? "Ej: Cambio de bomba de agua" : "Ej: Service de aceite y filtros"} onChange={(e) => setTitle(e.target.value)} /></Field>
+      <div className="two">
+        <Field label="Fecha"><input className="inp" type="date" value={date} onChange={(e) => setDate(e.target.value)} /></Field>
+        <Field label="Km"><input className="inp num" inputMode="numeric" value={km} onChange={(e) => setKm(e.target.value)} /></Field>
+      </div>
+
+      <div className="sec-h" style={{ margin: "4px 0 8px" }}><h2 style={{ fontSize: 12 }}>Repuestos / insumos</h2><button className="btn ghost sm" onClick={addPart}>+ Agregar</button></div>
+      {parts.map((p) => (
+        <div key={p.id} className="card" style={{ background: "var(--bg3)", padding: 11 }}>
+          <div style={{ display: "flex", gap: 8 }}>
+            <input className="inp" style={{ flex: 1 }} placeholder="Repuesto (ej: Filtro de aceite)" value={p.name} onChange={(e) => upPart(p.id, "name", e.target.value)} />
+            {parts.length > 1 && <button className="iconbtn" onClick={() => rmPart(p.id)}>✕</button>}
+          </div>
+          <div className="two" style={{ marginTop: 8 }}>
+            <input className="inp" placeholder="Marca" value={p.brand} onChange={(e) => upPart(p.id, "brand", e.target.value)} />
+            <input className="inp num" placeholder="Código" value={p.code} onChange={(e) => upPart(p.id, "code", e.target.value)} />
+          </div>
+          <div className="two" style={{ marginTop: 8 }}>
+            <input className="inp" placeholder="Lugar / taller" value={p.place} onChange={(e) => upPart(p.id, "place", e.target.value)} />
+            <input className="inp num" inputMode="numeric" placeholder="Precio $" value={p.cost} onChange={(e) => upPart(p.id, "cost", e.target.value)} />
+          </div>
+        </div>
+      ))}
+      <Field label="Mano de obra $"><input className="inp num" inputMode="numeric" value={labor} placeholder="0" onChange={(e) => setLabor(e.target.value)} /></Field>
+
+      <div className="field">
+        <label>Adjuntar factura / remito / ticket</label>
+        <button className="btn ghost block sm" onClick={() => fileRef.current?.click()}>📎 Sumar foto o PDF</button>
+        <input ref={fileRef} type="file" accept="image/*,application/pdf" multiple style={{ display: "none" }} onChange={onFiles} />
+        {atts.length > 0 && (
+          <div className="att">
+            {atts.map((a) => (
+              <div key={a.id} style={{ position: "relative" }}>
+                {a.kind === "image" ? <img className="thumb" src={a.previewUrl} alt="" /> : <span className="filepill">📄 {a.name.slice(0, 14)}</span>}
+                <button className="x" style={{ position: "absolute", top: -8, right: -8, width: 22, height: 22, fontSize: 12 }} onClick={() => rmAtt(a.id)}>✕</button>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="field">
+        <label>¿Qué mantenimientos pone a cero?</label>
+        <div className="toglist">
+          {vehicle.maintenanceItems.map((it) => (
+            <div key={it.id} className={"tog" + (resets[it.id] ? " on" : "")} onClick={() => setResets((r) => ({ ...r, [it.id]: !r[it.id] }))}>
+              <div className="box">{resets[it.id] ? "✓" : ""}</div>{it.name}
+            </div>
+          ))}
+        </div>
+        <div className="note">Lo que tildes acá reinicia su contador (km y fecha) → así se actualizan las alertas del tablero.</div>
+      </div>
+
+      <div className="field">
+        <label>Checklist de control visual</label>
+        <div className="chk" style={{ gap: 7 }}>
+          {CHECKLIST.map((c) => (
+            <span key={c} className={"c" + (checklist[c] ? " on" : "")} style={{ cursor: "pointer", padding: "5px 9px" }} onClick={() => setChecklist((s) => ({ ...s, [c]: !s[c] }))}>
+              {checklist[c] ? "✓ " : ""}{c}
+            </span>
+          ))}
+        </div>
+      </div>
+      <Field label="Notas"><textarea className="ta" value={notes} placeholder="Observaciones del taller, próximos puntos a revisar…" onChange={(e) => setNotes(e.target.value)} /></Field>
+    </Sheet>
+  );
+}
+
+function ExpenseForm({ vehicle, onSave, onClose }) {
+  const [f, setF] = useState({ date: todayISO(), category: "combustible", amount: "", label: "" });
+  const up = (k, v) => setF((s) => ({ ...s, [k]: v }));
+  const save = () => { if (!Number(f.amount)) return; onSave({ id: uid(), vehicleId: vehicle.id, ...f, amount: Number(f.amount) }); };
+  return (
+    <Sheet title="Registrar gasto" onClose={onClose}
+      footer={<button className="btn acc block" onClick={save}>Guardar gasto</button>}>
+      <Field label="Categoría">
+        <select className="sel" value={f.category} onChange={(e) => up("category", e.target.value)}>
+          {CATS.map((c) => <option key={c.id} value={c.id}>{c.label}</option>)}
+        </select>
+      </Field>
+      <div className="two">
+        <Field label="Monto $"><input className="inp num" inputMode="numeric" value={f.amount} placeholder="0" onChange={(e) => up("amount", e.target.value)} /></Field>
+        <Field label="Fecha"><input className="inp" type="date" value={f.date} onChange={(e) => up("date", e.target.value)} /></Field>
+      </div>
+      <Field label="Detalle (opcional)"><input className="inp" value={f.label} placeholder="Ej: Carga nafta YPF" onChange={(e) => up("label", e.target.value)} /></Field>
+      <div className="note">Los services ya cuentan como gasto (preventivo/correctivo). Acá sumás combustible, seguro, patente y otros.</div>
+    </Sheet>
+  );
+}
+
+/* ===================== tabs ===================== */
+function Dashboard({ v, onUpdateItem, onAddItem, openItem }) {
+  const alerts = vehicleAlerts(v);
+  const items = v.maintenanceItems;
+  return (
+    <div className="sec">
+      {alerts.length > 0 && (
+        <>
+          <div className="sec-h"><h2>Alertas</h2><span className="eyebrow">{alerts.length} pendiente(s)</span></div>
+          {alerts.map(({ it, s }) => (
+            <div key={it.id} className={"alert " + (s.status === "overdue" ? "over" : "soon")} onClick={() => openItem(it)} style={{ cursor: "pointer" }}>
+              <span style={{ fontSize: 18 }}>{s.status === "overdue" ? "⛔" : "⚠️"}</span>
+              <div style={{ flex: 1 }}>
+                <div className="ttl">{it.name}</div>
+                <div className="ds">
+                  {s.kmRemaining != null && (s.kmRemaining <= 0 ? `Vencido por ${fmtKm(-s.kmRemaining)}` : `Faltan ${fmtKm(s.kmRemaining)}`)}
+                  {s.kmRemaining != null && s.daysRemaining != null ? " · " : ""}
+                  {s.daysRemaining != null && (s.daysRemaining <= 0 ? `vencido hace ${-s.daysRemaining} días` : `o ${s.daysRemaining} días`)}
+                </div>
+                {s.pred && <div className="pred" style={{ marginTop: 4 }}>{s.pred.soon ? <b>{s.pred.text}</b> : s.pred.text}</div>}
+              </div>
+              <Pill status={s.status} />
+            </div>
+          ))}
+        </>
+      )}
+
+      <div className="sec-h"><h2>Plan de mantenimiento</h2><button className="btn ghost sm" onClick={onAddItem}>+ Agregar</button></div>
+      {items.length === 0 && <Empty icon="🔧" title="Sin items todavía" sub="Agregá aceite, filtros, frenos…" />}
+      {items.map((it) => {
+        const s = itemStatus(v, it);
+        return (
+          <div key={it.id} className="card" onClick={() => openItem(it)} style={{ cursor: "pointer" }}>
+            <div className="mrow">
+              <Gauge progress={s.progress} status={s.status} />
+              <div className="minfo">
+                <div className="mn">{it.name}<Pill status={s.status} /></div>
+                <div className="dual">
+                  {it.intervalKm > 0 && (
+                    <div className={"d" + (s.bind === "km" ? " bind" : "")}>
+                      {s.kmRemaining <= 0 ? "Vencido " : "Faltan "}<span className="num">{s.kmRemaining <= 0 ? fmtKm(-s.kmRemaining) : fmtKm(s.kmRemaining)}</span>
+                    </div>
+                  )}
+                  {it.intervalMonths > 0 && (
+                    <div className={"d" + (s.bind === "time" ? " bind" : "")}>
+                      {s.daysRemaining <= 0 ? "Vencido " : "o "}<span className="num">{s.daysRemaining <= 0 ? `${-s.daysRemaining}d` : s.daysRemaining > 60 ? `${Math.round(s.daysRemaining / 30)} meses` : `${s.daysRemaining} días`}</span>
+                    </div>
+                  )}
+                </div>
+                {s.pred && <div className="pred">{s.pred.soon ? <b>{s.pred.text}</b> : s.pred.text}</div>}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function History({ v, services, onAdd, onDelete, onOpenMedia }) {
+  const list = services.filter((s) => s.vehicleId === v.id).sort((a, b) => b.date.localeCompare(a.date));
+  return (
+    <div className="sec">
+      <div className="sec-h"><h2>Historial</h2><button className="btn acc sm" onClick={onAdd}>+ Service</button></div>
+      {list.length === 0 && <Empty icon="📖" title="Bitácora vacía" sub="Registrá tu primer service o reparación" />}
+      <div className="tl">
+        {list.map((s) => (
+          <div key={s.id} className={"tlitem" + (s.type === "correctivo" ? " corr" : "")}>
+            <div className="card" style={{ marginBottom: 0 }}>
+              <div className="svc-h">
+                <div style={{ minWidth: 0 }}>
+                  <div className="svc-t">{s.title}</div>
+                  <div className="svc-meta">
+                    <span>{fmtDate(s.date)}</span><span>{fmtKm(s.km)}</span>
+                    <span className="pill cat" style={{ padding: "1px 6px" }}>{s.type === "correctivo" ? "Correctivo" : "Preventivo"}</span>
+                  </div>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div className="cost">{money(s.totalCost)}</div>
+                  <button className="iconbtn" style={{ marginTop: 6, width: 28, height: 28, fontSize: 13 }} onClick={() => onDelete(s.id)}>🗑</button>
+                </div>
+              </div>
+              {s.parts?.map((p) => (
+                <div key={p.id} className="part">
+                  <div className="pl">
+                    <div className="pn">{p.name}</div>
+                    <div className="pd">{[p.brand, p.code, p.place].filter(Boolean).join(" · ")}</div>
+                  </div>
+                  {p.cost > 0 && <div className="pc">{money(p.cost)}</div>}
+                </div>
+              ))}
+              {s.labor > 0 && <div className="part"><div className="pl"><div className="pn" style={{ color: "var(--mut)" }}>Mano de obra</div></div><div className="pc">{money(s.labor)}</div></div>}
+              {s.checklist && Object.values(s.checklist).some(Boolean) && (
+                <div className="chk">{Object.keys(s.checklist).filter((k) => s.checklist[k]).map((k) => <span key={k} className="c on">✓ {k}</span>)}</div>
+              )}
+              {s.attachments?.length > 0 && <div className="att">{s.attachments.map((a) => <StoredAttachment key={a.id} att={a} onOpen={onOpenMedia} />)}</div>}
+              {s.notes && <div className="note" style={{ marginTop: 9 }}>{s.notes}</div>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MonthlyBars({ data }) {
+  const max = Math.max(1, ...data.map((d) => d.total));
+  return (
+    <div className="mbars">
+      {data.map((d, i) => (
+        <div key={i} className="mbar">
+          <div className="mbar-v">{d.total >= 1000 ? Math.round(d.total / 1000) + "k" : d.total}</div>
+          <div className="mbar-track"><div className="mbar-fill" style={{ height: Math.max(4, (d.total / max) * 120) + "px" }} /></div>
+          <div className="mbar-l">{d.label}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Expenses({ v, services, expenses, onAdd, onDelete }) {
+  const data = useMemo(() => {
+    const svc = services.filter((s) => s.vehicleId === v.id).map((s) => ({ id: s.id, date: s.date, amount: s.totalCost, category: s.type, label: s.title, src: "service" }));
+    const exp = expenses.filter((e) => e.vehicleId === v.id).map((e) => ({ ...e, src: "exp" }));
+    return [...svc, ...exp].sort((a, b) => b.date.localeCompare(a.date));
+  }, [services, expenses, v.id]);
+
+  const total = data.reduce((s, x) => s + x.amount, 0);
+  const byCat = CATS.map((c) => ({ ...c, total: data.filter((x) => x.category === c.id).reduce((s, x) => s + x.amount, 0) })).filter((c) => c.total > 0).sort((a, b) => b.total - a.total);
+  const maxCat = Math.max(1, ...byCat.map((c) => c.total));
+
+  const monthly = useMemo(() => {
+    const m = {};
+    data.forEach((x) => { const k = x.date.slice(0, 7); m[k] = (m[k] || 0) + x.amount; });
+    return Object.keys(m).sort().slice(-6).map((k) => ({ label: monthLabel(k + "-01"), total: Math.round(m[k]) }));
+  }, [data]);
+
+  // costo por km: gasto total de mantenimiento / km recorridos conocidos
+  const kmDriven = (v.kmHistory && v.kmHistory.length >= 2) ? v.currentKm - v.kmHistory[0].km : null;
+  const maint = data.filter((x) => x.category === "preventivo" || x.category === "correctivo").reduce((s, x) => s + x.amount, 0);
+  const perKm = kmDriven && kmDriven > 0 ? maint / kmDriven : null;
+
+  return (
+    <div className="sec">
+      <div className="sec-h"><h2>Gastos</h2><button className="btn acc sm" onClick={onAdd}>+ Gasto</button></div>
+      <div className="stats">
+        <div className="stat"><div className="sl">Total registrado</div><div className="sv">{money(total)}</div></div>
+        <div className="stat"><div className="sl">Costo por km (mant.)</div><div className="sv">{perKm != null ? <>$ {perKm.toFixed(0)}<small>/km</small></> : "—"}</div></div>
+      </div>
+
+      {monthly.length > 0 && (
+        <div className="card" style={{ paddingBottom: 6 }}>
+          <div className="sl" style={{ fontSize: 10.5, textTransform: "uppercase", letterSpacing: 1.1, color: "var(--mut2)", marginBottom: 8 }}>Gasto mensual</div>
+          <MonthlyBars data={monthly} />
+        </div>
+      )}
+
+      {byCat.length > 0 && (
+        <div className="card">
+          <div className="sl" style={{ fontSize: 10.5, textTransform: "uppercase", letterSpacing: 1.1, color: "var(--mut2)", marginBottom: 10 }}>Por categoría</div>
+          {byCat.map((c) => (
+            <div key={c.id} className="catbar">
+              <div className="cl"><span>{c.label}</span><span className="num">{money(c.total)}</span></div>
+              <div className="tr"><div className="fl" style={{ width: (c.total / maxCat) * 100 + "%", background: c.color }} /></div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="sec-h" style={{ marginBottom: 8 }}><h2 style={{ fontSize: 12 }}>Movimientos</h2></div>
+      {data.length === 0 && <Empty icon="💸" title="Sin gastos" sub="Sumá combustible, seguro o un service" />}
+      {data.map((x) => (
+        <div key={x.id} className="card" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "11px 13px" }}>
+          <div style={{ minWidth: 0 }}>
+            <div style={{ fontFamily: "var(--disp)", fontWeight: 600, fontSize: 14 }}>{x.label || catOf(x.category).label}</div>
+            <div className="svc-meta" style={{ marginTop: 2 }}><span>{fmtDate(x.date)}</span><span className="pill cat" style={{ padding: "1px 6px", color: catOf(x.category).color }}>{catOf(x.category).label}</span>{x.src === "service" && <span>· service</span>}</div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div className="cost" style={{ fontSize: 14 }}>{money(x.amount)}</div>
+            {x.src === "exp" && <button className="iconbtn" style={{ width: 28, height: 28, fontSize: 13 }} onClick={() => onDelete(x.id)}>🗑</button>}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ===================== respaldo ===================== */
+async function exportBackup(state) {
+  const photos = {};
+  for (const s of state.services) {
+    for (const a of s.attachments || []) {
+      const data = await getPhoto(a.id);
+      if (data) photos[a.id] = data;
+    }
+  }
+  const backup = { app: "bitacora", version: 2, exportedAt: new Date().toISOString(), state, photos };
+  const blob = new Blob([JSON.stringify(backup)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = `bitacora-respaldo-${todayISO()}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+}
+async function importBackup(file, onDone) {
+  let data;
+  try { data = JSON.parse(await file.text()); } catch { alert("El archivo no se pudo leer como respaldo."); return; }
+  if (!data || data.app !== "bitacora" || !data.state || !Array.isArray(data.state.vehicles)) { alert("Este archivo no es un respaldo de Bitácora."); return; }
+  if (data.photos) { for (const id of Object.keys(data.photos)) { try { await savePhoto(id, data.photos[id]); } catch {} } }
+  onDone(data.state);
+}
+
+function SettingsSheet({ state, onClose, onImport }) {
+  const fileRef = useRef();
+  const [busy, setBusy] = useState(false);
+  const [done, setDone] = useState("");
+  const doExport = async () => { setBusy(true); setDone(""); try { await exportBackup(state); setDone("Respaldo descargado ✓"); } catch { alert("No se pudo exportar."); } finally { setBusy(false); } };
+  const onFile = async (e) => {
+    const f = e.target.files?.[0]; e.target.value = "";
+    if (!f) return;
+    if (!confirm("Importar va a reemplazar todos los datos actuales por los del respaldo. ¿Continuar?")) return;
+    setBusy(true);
+    try { await importBackup(f, onImport); } finally { setBusy(false); }
+  };
+  const photoCount = state.services.reduce((n, s) => n + (s.attachments?.length || 0), 0);
+  return (
+    <Sheet title="Datos y respaldo" onClose={onClose}>
+      <div className="card" style={{ background: "var(--bg3)" }}>
+        <div className="svc-meta" style={{ fontSize: 12.5 }}>
+          <span>{state.vehicles.length} vehículo(s)</span>
+          <span>{state.services.length} service(s)</span>
+          <span>{state.expenses.length} gasto(s)</span>
+          <span>{photoCount} foto(s)</span>
+        </div>
+      </div>
+      <button className="btn acc block" style={{ marginBottom: 10 }} disabled={busy} onClick={doExport}>⬇ Exportar respaldo (.json)</button>
+      <button className="btn ghost block" disabled={busy} onClick={() => fileRef.current?.click()}>⬆ Importar respaldo</button>
+      <input ref={fileRef} type="file" accept="application/json,.json" style={{ display: "none" }} onChange={onFile} />
+      {done && <div style={{ color: "var(--ok)", fontFamily: "var(--mono)", fontSize: 12, marginTop: 10, textAlign: "center" }}>{done}</div>}
+      <div className="note">El respaldo incluye todo: vehículos, planes de mantenimiento, historial, gastos y las fotos de facturas. Guardalo en Drive o donde quieras; con "Importar" lo restaurás en este u otro teléfono. Importar reemplaza los datos actuales.</div>
+    </Sheet>
+  );
+}
+
+/* ===================== app ===================== */
+function App() {
+  const [state, setState] = useState(null);
+  const [tab, setTab] = useState("tablero");
+  const [modal, setModal] = useState(null); // {type, payload}
+  const [media, setMedia] = useState(null);
+
+  useEffect(() => { loadState().then((s) => setState(s || buildSeed())); }, []);
+  useEffect(() => { if (state) saveState(state); }, [state]);
+
+  if (!state) return <div className="gx"><style>{CSS}</style><div className="gx-frame"><div className="loading">Cargando tu garage…</div></div></div>;
+
+  const v = state.vehicles.find((x) => x.id === state.activeId) || state.vehicles[0];
+  const setVehicle = (nv) => setState((s) => ({ ...s, vehicles: s.vehicles.map((x) => (x.id === nv.id ? nv : x)) }));
+
+  const saveVehicle = (nv) => { setState((s) => { const exists = s.vehicles.some((x) => x.id === nv.id); return { ...s, vehicles: exists ? s.vehicles.map((x) => (x.id === nv.id ? nv : x)) : [...s.vehicles, nv], activeId: nv.id }; }); setModal(null); };
+  const deleteVehicle = (id) => { if (state.vehicles.length <= 1) { alert("Tiene que quedar al menos un vehículo."); return; } if (!confirm("¿Eliminar este vehículo y su historial?")) return; setState((s) => { const vs = s.vehicles.filter((x) => x.id !== id); return { ...s, vehicles: vs, activeId: vs[0].id, services: s.services.filter((x) => x.vehicleId !== id), expenses: s.expenses.filter((x) => x.vehicleId !== id) }; }); setModal(null); };
+
+  const saveItem = (it) => { setVehicle({ ...v, maintenanceItems: v.maintenanceItems.some((x) => x.id === it.id) ? v.maintenanceItems.map((x) => (x.id === it.id ? it : x)) : [...v.maintenanceItems, it] }); setModal(null); };
+  const deleteItem = (id) => { setVehicle({ ...v, maintenanceItems: v.maintenanceItems.filter((x) => x.id !== id) }); setModal(null); };
+
+  const saveService = (svc, resetIds) => {
+    setState((s) => {
+      const vehicles = s.vehicles.map((veh) => {
+        if (veh.id !== v.id) return veh;
+        const items = veh.maintenanceItems.map((it) => (resetIds.includes(it.id) ? { ...it, lastServiceKm: svc.km, lastServiceDate: svc.date } : it));
+        const hist = svc.km >= veh.currentKm ? [...(veh.kmHistory || []), { km: svc.km, date: svc.date }].slice(-12) : veh.kmHistory;
+        return { ...veh, maintenanceItems: items, currentKm: Math.max(veh.currentKm, svc.km), kmHistory: hist };
+      });
+      return { ...s, vehicles, services: [...s.services, svc] };
+    });
+    setModal(null);
+  };
+  const deleteService = (id) => { if (!confirm("¿Eliminar este registro?")) return; const svc = state.services.find((x) => x.id === id); svc?.attachments?.forEach((a) => delPhoto(a.id)); setState((s) => ({ ...s, services: s.services.filter((x) => x.id !== id) })); };
+
+  const saveExpense = (e) => { setState((s) => ({ ...s, expenses: [...s.expenses, e] })); setModal(null); };
+  const deleteExpense = (id) => setState((s) => ({ ...s, expenses: s.expenses.filter((x) => x.id !== id) }));
+
+  const alertCount = vehicleAlerts(v).length;
+
+  return (
+    <div className="gx">
+      <style>{CSS}</style>
+      <div className="gx-frame">
+        {/* topbar */}
+        <div className="top">
+          <div className="topbar-row">
+            <div className="brand"><span className="dot" />BITÁCORA</div>
+            <button className="iconbtn" onClick={() => setModal({ type: "settings" })} aria-label="Datos y respaldo">☰</button>
+          </div>
+          <div className="vehsel">
+            {state.vehicles.map((veh) => (
+              <div key={veh.id} className={"vchip" + (veh.id === v.id ? " on" : "")} onClick={() => setState((s) => ({ ...s, activeId: veh.id }))} onDoubleClick={() => setModal({ type: "vehicle", payload: veh })}>
+                {veh.name}<span className="vk">{Math.round(veh.currentKm / 1000)}k km</span>
+              </div>
+            ))}
+            <div className="vchip add" onClick={() => setModal({ type: "vehicle" })}>+</div>
+          </div>
+        </div>
+
+        {/* odometer */}
+        <div className="odo">
+          <div>
+            <div className="lbl">{v.make} {v.model} {v.year ? "· " + v.year : ""}</div>
+            <div className="big">{v.currentKm.toLocaleString("es-AR")}<small>km</small></div>
+            <div className="sub">Promedio <b>{v.dailyAvgKm} km/día</b>{alertCount > 0 ? ` · ${alertCount} alerta(s)` : " · todo al día"}</div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <button className="btn acc sm" onClick={() => setModal({ type: "km" })}>+ Km</button>
+            <button className="iconbtn" onClick={() => setModal({ type: "vehicle", payload: v })}>⚙</button>
+          </div>
+        </div>
+
+        {/* contenido */}
+        {tab === "tablero" && <Dashboard v={v} onAddItem={() => setModal({ type: "item" })} openItem={(it) => setModal({ type: "item", payload: it })} />}
+        {tab === "historial" && <History v={v} services={state.services} onAdd={() => setModal({ type: "service" })} onDelete={deleteService} onOpenMedia={setMedia} />}
+        {tab === "gastos" && <Expenses v={v} services={state.services} expenses={state.expenses} onAdd={() => setModal({ type: "expense" })} onDelete={deleteExpense} />}
+
+        {/* tabbar */}
+        <div className="tabbar">
+          <div className="tabbar-in">
+            <button className={"tab" + (tab === "tablero" ? " on" : "")} onClick={() => setTab("tablero")}><span className="ic">◔</span>Tablero</button>
+            <button className={"tab" + (tab === "historial" ? " on" : "")} onClick={() => setTab("historial")}><span className="ic">≡</span>Historial</button>
+            <button className={"tab" + (tab === "gastos" ? " on" : "")} onClick={() => setTab("gastos")}><span className="ic">$</span>Gastos</button>
+          </div>
+        </div>
+
+        {/* modals */}
+        {modal?.type === "vehicle" && <VehicleForm vehicle={modal.payload} onSave={saveVehicle} onClose={() => setModal(null)} onDelete={deleteVehicle} />}
+        {modal?.type === "km" && <KmForm vehicle={v} onSave={(nv) => { setVehicle(nv); setModal(null); }} onClose={() => setModal(null)} />}
+        {modal?.type === "item" && <ItemForm item={modal.payload} onSave={saveItem} onClose={() => setModal(null)} onDelete={deleteItem} />}
+        {modal?.type === "service" && <ServiceForm vehicle={v} onSave={saveService} onClose={() => setModal(null)} />}
+        {modal?.type === "expense" && <ExpenseForm vehicle={v} onSave={saveExpense} onClose={() => setModal(null)} />}
+        {modal?.type === "settings" && <SettingsSheet state={state} onClose={() => setModal(null)} onImport={(st) => { setState(st); setModal(null); }} />}
+
+        {/* lightbox / pdf */}
+        {media && (
+          <div className="lb" onClick={() => setMedia(null)}>
+            {media.kind === "image" ? <img src={media.url} alt="" /> : (
+              <div onClick={(e) => e.stopPropagation()} style={{ textAlign: "center" }}>
+                <div style={{ color: "var(--txt)", fontFamily: "var(--mono)", marginBottom: 14 }}>📄 {media.name}</div>
+                <a className="btn acc" href={media.url} download={media.name || "documento.pdf"}>Descargar PDF</a>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const __root = ReactDOM.createRoot(document.getElementById("root"));
+__root.render(<App />);
+
+</script>
+</body>
+</html>
